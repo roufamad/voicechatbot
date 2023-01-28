@@ -3,6 +3,8 @@ let recognition;
 let synth;
 let textVal;
 let myTextArea;
+var apiKey = process.env.API_KEY;
+
 
 function setup() {
   // Create a speech object
@@ -42,7 +44,7 @@ async function askGPT3(message) {
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "Bearer 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");                                                
+  xhr.setRequestHeader("Authorization", "Bearer ${apiKey}");                                                
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       console.log(xhr.status);
