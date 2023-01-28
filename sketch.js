@@ -44,7 +44,7 @@ async function askGPT3(message) {
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "Bearer ${apiKey}");                                                
+  xhr.setRequestHeader("Authorization", "Bearer"+apikey);                                                
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       console.log(xhr.status);
